@@ -1,13 +1,16 @@
-/ Check whether a string is a palindrome or not.
+function identifyPrime(num) {
+  // edge case
+  if (num === 1) {
+    console.log("No");
+    return;
+  }
 
-let str = "racecar";
-
-let bag = "";
-for (let i = str.length - 1; i >= 0; i--) {
-  bag = bag + str[i];
-}
-if (bag === str) {
-  console.log("This String is a palindrome");
-} else {
-  console.log("This String is not a panlindrome");
+  let range = Math.floor(Math.sqrt(num));
+  for (let i = 2; i <= range; i++) {
+    if (num % i === 0) {
+      console.log("No");
+      return;
+    }
+  }
+  console.log("Yes");
 }
